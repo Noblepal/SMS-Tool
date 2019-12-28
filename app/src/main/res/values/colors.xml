@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#181818</color>
+    <color name="colorPrimaryDark">#FF000000</color>
+    <color name="colorAccent">#F7A449</color>
+    <color name="dark">#FF000000</color>
+    <color name="transparent">#00000000</color>
+
+    <color name="colorFestival">#E5CD49</color><!--Yellow-->
+    <color name="colorSunshade">#F7A449</color><!--Orange-->
+    <color name="colorGrey90">#E5E5E5</color><!--Grey-->
+    <color name="colorPictonBlue">#52ABDE</color><!--Blue-->
+    <color name="colorMantis">#94CB58</color>
+    <color name="white">#FFFFFFFF</color><!--Green-->
+</resources>
