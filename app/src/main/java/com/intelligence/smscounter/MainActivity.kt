@@ -1,9 +1,13 @@
 package com.intelligence.smscounter
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -19,9 +23,12 @@ class MainActivity : AppCompatActivity() {
     private var keyword: String = ""
     private val smsList = ArrayList<SMSData>()
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
         checkPermissions()
 
@@ -110,6 +117,24 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater = MenuInflater(this)
+        inflater.inflate(R.menu.menu_main, menu)
+
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.action_sms_contacts -> {
+                startActivity(Intent(this, ContactsSMSActivity::class.java))
+            }
+            android.R.id.home -> {
+                onBackPressed()
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
 
     private fun showProgressBar() {
         progress_loading.visibility = View.VISIBLE
