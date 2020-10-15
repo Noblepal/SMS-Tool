@@ -6,13 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".ContactsSMSActivity">
 
+    <ProgressBar
+        android:id="@+id/pbLoading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/recyclerView"
+        app:layout_constraintEnd_toEndOf="@+id/recyclerView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/recyclerView" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="vertical"
-        android:scrollingCache="true" />
-
+        android:scrollingCache="true"
+        tools:itemCount="4"
+        tools:listitem="@layout/item_contact" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,8 +6,8 @@ public class Splitter {
 
     companion object {
         const val sent_to = "sent to "
-        fun splitMessage(msg: String): String {
-            if (!msg.contains(sent_to)) return msg
+        fun splitMessage(msg: String): Array<String> {
+            if (!msg.contains(sent_to)) return arrayOf(msg)
             var full_name = ""
             var phone = ""
             var splitted: List<String> = msg.split(sent_to)
@@ -41,7 +41,7 @@ public class Splitter {
             }
 
             Log.e("split", "Full name: $full_name")
-            return "$full_name,$phone"
+            return arrayOf(full_name, phone)
         }
     }
 }

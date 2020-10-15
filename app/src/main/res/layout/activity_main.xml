@@ -12,25 +12,43 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/edt_sender"
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="Name"
-            android:text=""
-            android:textColor="@color/black"
-            android:textColorHint="@color/grey_600" />
+            android:layout_margin="4dp"
+            android:layout_weight="1">
 
-        <EditText
-            android:id="@+id/edt_keyword"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_sender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Name"
+                android:text=""
+                android:textColor="@color/black"
+                android:textColorHint="@color/grey_600" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="Keyword"
-            android:text=""
-            android:textColor="@color/black"
-            android:textColorHint="@color/grey_600" />
+            android:layout_margin="4dp"
+            android:layout_weight="1">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_keyword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Keyword"
+                android:text=""
+                android:textColor="@color/black"
+                android:textColorHint="@color/grey_600" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
     </LinearLayout>
 
 
@@ -40,7 +58,7 @@
         android:orientation="horizontal"
         android:weightSum="2">
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_single_num_sms"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -51,7 +69,7 @@
             android:textColor="@color/black"
             android:textSize="16sp" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_all_sms"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -79,11 +97,10 @@
                 android:layout_centerInParent="true"
                 android:gravity="center"
                 android:padding="4dp"
-                android:textColor="@color/colorSunshade"
+                android:text="0"
+                android:textColor="@color/black"
                 android:textSize="18sp"
-                android:textStyle="bold"
-                android:visibility="invisible"
-                tools:text="Count" />
+                android:textStyle="bold" />
         </RelativeLayout>
     </LinearLayout>
 
@@ -93,9 +110,9 @@
         android:layout_height="0dp"
         android:layout_weight="6"
         android:divider="@color/transparent"
-        android:overScrollMode="always"
         android:dividerHeight="8dp"
         android:fastScrollEnabled="true"
+        android:overScrollMode="always"
         android:paddingTop="8dp"
         android:paddingBottom="8dp"
         tools:listitem="@layout/row_layout2" />
