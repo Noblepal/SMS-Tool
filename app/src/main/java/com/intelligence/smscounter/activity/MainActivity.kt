@@ -1,4 +1,4 @@
-package com.intelligence.smscounter
+package com.intelligence.smscounter.activity
 
 import android.Manifest
 import android.content.Intent
@@ -11,6 +11,9 @@ import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import com.intelligence.smscounter.R
+import com.intelligence.smscounter.adapter.ListAdapter
+import com.intelligence.smscounter.model.SMSData
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread

@@ -1,10 +1,12 @@
-package com.intelligence.smscounter
+package com.intelligence.smscounter.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import com.intelligence.smscounter.R
+import com.intelligence.smscounter.model.SMSData
 import kotlinx.android.synthetic.main.row_layout2.view.*
 import java.util.*
 

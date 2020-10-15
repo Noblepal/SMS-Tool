@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="4dp"
-    tools:context=".MainActivity">
+    tools:context=".activity.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -107,14 +107,12 @@
     <ListView
         android:id="@+id/listview"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_weight="6"
-        android:divider="@color/transparent"
-        android:dividerHeight="8dp"
+        android:divider="@color/grey_100"
+        android:dividerHeight="1dp"
         android:fastScrollEnabled="true"
         android:overScrollMode="always"
-        android:paddingTop="8dp"
-        android:paddingBottom="8dp"
         tools:listitem="@layout/row_layout2" />
 
 </LinearLayout>

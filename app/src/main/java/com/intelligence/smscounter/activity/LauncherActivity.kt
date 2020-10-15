@@ -1,7 +1,8 @@
-package com.intelligence.smscounter
+package com.intelligence.smscounter.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.intelligence.smscounter.R
 
 class LauncherActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

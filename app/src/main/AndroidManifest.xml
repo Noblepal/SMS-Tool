@@ -15,11 +15,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".ContactsSMSActivity">
+        <activity android:name=".activity.ContactsSMSActivity">
 
         </activity>
-        <activity android:name=".LauncherActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".activity.LauncherActivity" />
+        <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

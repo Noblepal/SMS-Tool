@@ -1,4 +1,4 @@
-package com.intelligence.smscounter;
+package com.intelligence.smscounter.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,6 +9,9 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.intelligence.smscounter.R;
+import com.intelligence.smscounter.model.Contact;
 
 import java.util.List;
 
@@ -24,7 +27,7 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.ViewHo
     }
 
     public interface ContactAddCallback {
-        void onContactAddClicked(Contact c, boolean isAdded);
+        void onContactAddClicked(Contact c);
     }
 
     public void addContactClickCallback(ContactAddCallback contactAddCallback) {
@@ -48,7 +51,7 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.ViewHo
         } else {
             holder.btn_add_contact.setImageResource(R.drawable.ic_add_contact);
             holder.btn_add_contact.setOnClickListener(v -> {
-                contactAddCallback.onContactAddClicked(s, s.isSaved());
+                contactAddCallback.onContactAddClicked(s);
             });
         }
     }

@@ -1,4 +1,4 @@
-package com.intelligence.smscounter
+package com.intelligence.smscounter.model
 
 import android.app.Activity
 import android.content.ContentResolver
@@ -13,11 +13,11 @@ data class Contact(val contactName: String?, var phone: String, var isSaved: Boo
 
     fun saveContact(activity: Activity, contact: Contact) {
 
-        // Check the Group is available or not
+        /*// Check the Group is available or not
         // Check the Group is available or not
         var groupCursor: Cursor? = null
         val groupProjection = arrayOf(ContactsContract.Groups._ID, ContactsContract.Groups.TITLE)
-        groupCursor = activity.managedQuery(ContactsContract.Groups.CONTENT_URI, groupProjection, ContactsContract.Groups.TITLE + "=?", arrayOf<String>("FROM M-PESA"), ContactsContract.Groups.TITLE + " ASC")
+        groupCursor = activity.contentResolver.query(ContactsContract.Groups.CONTENT_URI, groupProjection, ContactsContract.Groups.TITLE + "=?", arrayOf<String>("FROM M-PESA"), ContactsContract.Groups.TITLE + " ASC")
         if (groupCursor != null) {
             Log.d("saveContact", "** " + groupCursor.getCount())
         }
@@ -37,32 +37,33 @@ data class Contact(val contactName: String?, var phone: String, var isSaved: Boo
                 Log.e("saveContact", "Group Creation Finished")
             } catch (e: java.lang.Exception) {
                 Log.e("saveContact :", "" + e.message)
+            } finally {
+                groupCursor.close()
+                groupCursor = null
             }
             Log.e("saveContact", "Group Creation Success")
         }
 
-        groupCursor.close()
-        groupCursor = null
 
         var groupID: String? = null
         var getGroupIDCursor: Cursor? = null
-        getGroupIDCursor = activity.managedQuery(ContactsContract.Groups.CONTENT_URI, groupProjection, ContactsContract.Groups.TITLE + "=?", arrayOf<String>("FROM M-PESA"), null)
+        getGroupIDCursor = activity.contentResolver.query(ContactsContract.Groups.CONTENT_URI, groupProjection, ContactsContract.Groups.TITLE + "=?", arrayOf<String>("FROM M-PESA"), null)
         Log.e("saveContact", "** " + getGroupIDCursor!!.count)
         getGroupIDCursor.moveToFirst()
         groupID = getGroupIDCursor.getString(getGroupIDCursor.getColumnIndex("_id"))
         Log.e("saveContact", "** $groupID")
 
         getGroupIDCursor.close()
-        getGroupIDCursor = null
+        getGroupIDCursor = null*/
 
         val intent = Intent(Intent.ACTION_INSERT, ContactsContract.Contacts.CONTENT_URI).apply {
             type = ContactsContract.RawContacts.CONTENT_TYPE
             putExtra(ContactsContract.Intents.Insert.NAME,
                     contact.contactName)
             putExtra(ContactsContract.Intents.Insert.PHONE,
-                    contact.phone)
+                    contact.phone)/*
             putExtra(ContactsContract.CommonDataKinds.GroupMembership.GROUP_ROW_ID,
-                    groupID)
+                    groupID)*/
             putExtra(ContactsContract.Intents.Insert.PHONE_TYPE,
                     ContactsContract.CommonDataKinds.Phone.TYPE_WORK)
             putExtra(ContactsContract.Intents.Insert.NOTES, "Saved from M-PESA")

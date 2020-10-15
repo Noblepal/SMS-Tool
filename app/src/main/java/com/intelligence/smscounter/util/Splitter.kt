@@ -1,8 +1,8 @@
-package com.intelligence.smscounter
+package com.intelligence.smscounter.util
 
 import android.util.Log
 
-public class Splitter {
+class Splitter {
 
     companion object {
         const val sent_to = "sent to "

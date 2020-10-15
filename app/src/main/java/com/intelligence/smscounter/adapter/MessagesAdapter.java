@@ -1,4 +1,4 @@
-package com.intelligence.smscounter;
+package com.intelligence.smscounter.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,6 +8,9 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.intelligence.smscounter.R;
+import com.intelligence.smscounter.model.SMSData;
 
 import java.util.List;
 
